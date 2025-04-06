@@ -2,12 +2,9 @@ import pygame
 from Entity import Entity
 
 class Character(Entity):
-    def __init__(self, lives, position, sprite_path):
-        super().__init__()
+    def __init__(self, x, y, images, lives):
+        super().__init__(x,y, images)  # Llamamos al constructor de la clase base
         self.lives = lives
-        self.is_alive = lives > 0
-        self.position = pygame.Vector2(position)  # Usamos pygame.Vector2 para manejar posiciones
-        self.sprite = pygame.image.load(sprite_path)  # Cargamos la imagen del personaje
         self.speed = 5  # Velocidad de movimiento
 
     def move(self, direction):

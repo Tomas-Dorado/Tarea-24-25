@@ -2,8 +2,8 @@ import pygame
 from Character import Character
 
 class Player(Character):
-    def __init__(self, name, x=0, y=0, score=0, lives=3):
-        super().__init__(name)
+    def __init__(self, x=0, y=0, score=0, lives=3):
+        super().__init__(name="Player1")  # Default name for the player
         self.x = x
         self.y = y
         self.score = score
