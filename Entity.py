@@ -1,13 +1,14 @@
+import pygame
+
 class Entity:
-    def __init__(self, x, y, image):
+    def __init__(self, x, y, image_path):
         self.x = x
         self.y = y
-        self.image = image
+        self.image = pygame.image.load(image_path)
 
     def move(self, dx, dy):
         self.x += dx
         self.y += dy
 
-    def draw(self):
-        # Placeholder for drawing logic
-        print(f"Drawing entity at ({self.x}, {self.y}) with image {self.image}")
+    def draw(self, screen):
+        screen.blit(self.image, (self.x, self.y))
